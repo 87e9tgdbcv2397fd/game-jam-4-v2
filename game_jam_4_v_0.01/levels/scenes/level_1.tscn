@@ -128,6 +128,20 @@ position = Vector2(11, 1008)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="water_hitbox" unique_id=1841841979 groups=["enemies"]]
 position = Vector2(2037, 0)
 shape = SubResource("RectangleShape2D_uucye")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=8733542]
+position = Vector2(114, 145)
+shape = SubResource("CircleShape2D_uucye")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=2107395235]
+position = Vector2(115, 139)
+texture = ExtResource("10_5jh6a")
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemy" unique_id=890284650]
+visibility_layer = 3
+y_sort_enabled = true
+position = Vector2(115, 150)
+target_position = Vector2(-18, 10)
+collide_with_areas = true
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Player/can_take_damage" to="Player" method="_on_can_take_damage_timeout"]
